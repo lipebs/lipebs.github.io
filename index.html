@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setores do Allianz Parque</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="container" onclick="toggleContainer('setores')">
+    <h2>SETORES DO ALLIANZ PARQUE</h2>
+
+    <table id="setores" class="escondido">
+        <thead>
+            <tr>
+                <th>Setor</th>
+                <th>Blocos</th>
+                <th>Acesso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Setor">CENTRAL OESTE</td>
+                <td data-label="Blocos">101-106</td>
+                <td data-label="Acesso">Portão A - Rua Palestra Itália</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">GOL NORTE</td>
+                <td data-label="Blocos">107-119</td>
+                <td data-label="Acesso">Portão B - Av. Francisco Matarazzo</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">CENTRAL LESTE</td>
+                <td data-label="Blocos">120-125</td>
+                <td data-label="Acesso">Portão C - Rua Padre Antônio Tomás</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">GOL SUL</td>
+                <td data-label="Blocos">126-138</td>
+                <td data-label="Acesso">Portão A - Rua Palestra Itália</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">SUPERIOR OESTE</td>
+                <td data-label="Blocos">501-507</td>
+                <td data-label="Acesso">Portão A - Rua Palestra Itália</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">SUPERIOR NORTE</td>
+                <td data-label="Blocos">508-519</td>
+                <td data-label="Acesso">Portão B - Av. Francisco Matarazzo</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">SUPERIOR LESTE</td>
+                <td data-label="Blocos">520-525</td>
+                <td data-label="Acesso">Portão B - Av. Francisco Matarazzo</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">VISITANTE</td>
+                <td data-label="Blocos">526-530</td>
+                <td data-label="Acesso">Portão D - Rua Padre Antônio Tomás</td>
+            </tr>
+            <tr>
+                <td data-label="Setor">SUPERIOR SUL</td>
+                <td data-label="Blocos">531-537</td>
+                <td data-label="Acesso">Portão A - Rua Palestra Itália</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" onclick="toggleContainer('portoes')">
+    <h2>PORTÕES</h2>
+
+    <table id="portoes" class="escondido">
+        <thead>
+            <tr>
+                <th>Portão</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Portão">Portão A</td>
+                <td data-label="Descrição">Gol Sul, Central Oeste, Superior Sul, Superior Oeste</td>
+            </tr>
+            <tr>
+                <td data-label="Portão">Portão A1</td>
+                <td data-label="Descrição">Imprensa</td>
+            </tr>
+            <tr>
+                <td data-label="Portão">Portão B</td>
+                <td data-label="Descrição">Gol Norte, Superior Norte, Superior Leste</td>
+            </tr>
+            <tr>
+                <td data-label="Portão">Portão B1</td>
+                <td data-label="Descrição">Credenciamento</td>
+            </tr>
+            <tr>
+                <td data-label="Portão">Portão C</td>
+                <td data-label="Descrição">Central Leste, Camarote Fanzone</td>
+            </tr>
+            <tr>
+                <td data-label="Portão">Portão C1</td>
+                <td data-label="Descrição">Camarotes (Business Club, Premium Lounge, Camarotes 3º (301-378), Camarotes 4º (401-496) e Lounge A1)</td>
+            </tr>
+            <tr>
+                <td data-label="Portão">Portão D</td>
+                <td data-label="Descrição">Visitante</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" onclick="toggleContainer('informacoes')">
+    <h2>INFORMAÇÕES ÚTEIS</h2>
+
+    <table id="informacoes" class="escondido">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Item">Ambulatórios</td>
+                <td data-label="Descrição">Setores 103 e 115</td>
+            </tr>
+            <tr>
+                <td data-label="Item">PNE</td>
+                <td data-label="Descrição">124 - Central Leste, 128 - Gol Sul, 137 - Gol Sul, 105 - Central Oeste</td>
+            </tr>
+            <tr>
+                <td data-label="Item">Ouvidoria</td>
+                <td data-label="Descrição">Setor 118</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="img-container">
+    <img id="myImg" src="mapa-allianz-parque.png" alt="Mapa Allianz Parque" style="max-width:300px;">
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+</div>
+
+<script>
+    function toggleContainer(containerId) {
+        var container = document.getElementById(containerId);
+        container.classList.toggle('escondido');
+    }
+
+    // Modal Image script
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var span = document.getElementsByClassName("close")[0];
+
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
